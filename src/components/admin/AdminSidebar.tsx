@@ -25,7 +25,7 @@ export default function AdminSidebar() {
   const nav = (
     <nav className="flex flex-col h-full">
       <div className="p-4 border-b border-gray-200">
-        <Link href="/" className="text-lg font-bold text-[var(--primary)]">
+        <Link href="/" className="text-lg font-bold text-primary">
           סטודיו ליאת רז
         </Link>
         <p className="text-xs text-gray-500 mt-1">ממשק ניהול</p>
@@ -39,7 +39,7 @@ export default function AdminSidebar() {
               onClick={() => setMobileOpen(false)}
               className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                 isActive(item.href)
-                  ? "bg-[var(--primary)] text-white"
+                  ? "bg-primary text-white"
                   : "text-gray-700 hover:bg-gray-100"
               }`}
             >

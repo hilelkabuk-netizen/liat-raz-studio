@@ -44,7 +44,7 @@ export default async function EditProductPage({
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-[var(--foreground)] mb-6">
+      <h1 className="text-2xl font-bold text-text-primary mb-6">
         {isNew ? "הוסף מוצר חדש" : `ערוך: ${product!.name}`}
       </h1>
 
@@ -57,7 +57,7 @@ export default async function EditProductPage({
             name="name"
             defaultValue={product?.name ?? ""}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
           />
         </div>
 
@@ -67,7 +67,7 @@ export default async function EditProductPage({
             name="description"
             defaultValue={product?.description ?? ""}
             rows={3}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
           />
         </div>
 
@@ -77,7 +77,7 @@ export default async function EditProductPage({
             <select
               name="category"
               defaultValue={product?.category ?? "כלי הגשה"}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             >
               <option value="כלי הגשה">כלי הגשה</option>
               <option value="ספלים">ספלים</option>
@@ -96,7 +96,7 @@ export default async function EditProductPage({
               step="1"
               defaultValue={product ? product.price / 100 : ""}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             />
           </div>
         </div>
@@ -107,7 +107,7 @@ export default async function EditProductPage({
             <input
               name="dimensions"
               defaultValue={product?.dimensions ?? ""}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
               placeholder='למשל: 15x10 ס"מ'
             />
           </div>
@@ -118,7 +118,7 @@ export default async function EditProductPage({
               name="order"
               type="number"
               defaultValue={product?.order ?? 0}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             />
           </div>
         </div>
@@ -148,7 +148,7 @@ export default async function EditProductPage({
         <div className="flex gap-3">
           <button
             type="submit"
-            className="bg-[var(--primary)] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90"
+            className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:opacity-90"
           >
             {isNew ? "הוסף" : "שמור שינויים"}
           </button>

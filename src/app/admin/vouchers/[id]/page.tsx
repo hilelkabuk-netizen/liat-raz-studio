@@ -39,7 +39,7 @@ export default async function EditVoucherPage({
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-[var(--foreground)] mb-6">
+      <h1 className="text-2xl font-bold text-text-primary mb-6">
         {isNew ? "הוסף שובר חדש" : `ערוך: ${voucher!.name}`}
       </h1>
 
@@ -52,7 +52,7 @@ export default async function EditVoucherPage({
             name="name"
             defaultValue={voucher?.name ?? ""}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             placeholder="למשל: שובר לשיעור פרטי"
           />
         </div>
@@ -64,7 +64,7 @@ export default async function EditVoucherPage({
             defaultValue={voucher?.description ?? ""}
             required
             rows={3}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
           />
         </div>
 
@@ -77,7 +77,7 @@ export default async function EditVoucherPage({
               step="1"
               defaultValue={voucher ? voucher.price / 100 : ""}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             />
           </div>
 
@@ -87,7 +87,7 @@ export default async function EditVoucherPage({
               name="order"
               type="number"
               defaultValue={voucher?.order ?? 0}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             />
           </div>
         </div>
@@ -95,7 +95,7 @@ export default async function EditVoucherPage({
         <div className="flex gap-3">
           <button
             type="submit"
-            className="bg-[var(--primary)] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90"
+            className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:opacity-90"
           >
             {isNew ? "הוסף" : "שמור שינויים"}
           </button>

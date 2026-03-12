@@ -30,7 +30,7 @@ export default async function AdminGalleryPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-[var(--foreground)] mb-6">גלריה</h1>
+      <h1 className="text-2xl font-bold text-text-primary mb-6">גלריה</h1>
 
       {/* Add new image form */}
       <form
@@ -51,7 +51,7 @@ export default async function AdminGalleryPage() {
               <input
                 name="alt"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
                 placeholder="כלי קרמיקה בעבודת יד"
               />
             </div>
@@ -61,13 +61,13 @@ export default async function AdminGalleryPage() {
                 name="order"
                 type="number"
                 defaultValue={0}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
               />
             </div>
             <div className="flex items-end">
               <button
                 type="submit"
-                className="bg-[var(--primary)] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90"
+                className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:opacity-90"
               >
                 הוסף
               </button>

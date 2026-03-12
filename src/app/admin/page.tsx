@@ -26,7 +26,7 @@ export default async function AdminDashboard() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-[var(--foreground)] mb-6">דשבורד</h1>
+      <h1 className="text-2xl font-bold text-text-primary mb-6">דשבורד</h1>
 
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
         {stats.map((stat) => (
@@ -34,7 +34,7 @@ export default async function AdminDashboard() {
             key={stat.label}
             className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 relative"
           >
-            <div className="text-2xl font-bold text-[var(--foreground)]">
+            <div className="text-2xl font-bold text-text-primary">
               {stat.value}
             </div>
             <div className="text-sm text-gray-500">{stat.label}</div>

@@ -19,12 +19,12 @@ export default async function AdminClassesPage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-[var(--foreground)]">
+        <h1 className="text-2xl font-bold text-text-primary">
           חוגים וסדנאות
         </h1>
         <Link
           href="/admin/classes/new"
-          className="bg-[var(--primary)] text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90"
+          className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90"
         >
           + הוסף חוג
         </Link>

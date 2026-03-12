@@ -29,7 +29,7 @@ export default async function AdminMessagesPage() {
   return (
     <div>
       <div className="flex items-center gap-3 mb-6">
-        <h1 className="text-2xl font-bold text-[var(--foreground)]">הודעות</h1>
+        <h1 className="text-2xl font-bold text-text-primary">הודעות</h1>
         {unreadCount > 0 && (
           <span className="bg-red-500 text-white text-sm rounded-full px-2 py-0.5">
             {unreadCount} חדשות
@@ -45,7 +45,7 @@ export default async function AdminMessagesPage() {
             <div
               key={msg.id}
               className={`bg-white rounded-xl shadow-sm border p-5 ${
-                msg.read ? "border-gray-100" : "border-[var(--primary)]/30 bg-orange-50/30"
+                msg.read ? "border-gray-100" : "border-primary/30 bg-orange-50/30"
               }`}
             >
               <div className="flex justify-between items-start mb-3">

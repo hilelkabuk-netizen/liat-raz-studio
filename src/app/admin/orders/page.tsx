@@ -11,7 +11,7 @@ export default async function AdminOrdersPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-[var(--foreground)] mb-6">הזמנות</h1>
+      <h1 className="text-2xl font-bold text-text-primary mb-6">הזמנות</h1>
 
       {orders.length === 0 ? (
         <p className="text-gray-500">אין הזמנות עדיין.</p>

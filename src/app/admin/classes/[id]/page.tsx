@@ -43,7 +43,7 @@ export default async function EditClassPage({
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-[var(--foreground)] mb-6">
+      <h1 className="text-2xl font-bold text-text-primary mb-6">
         {isNew ? "הוסף חוג חדש" : `ערוך: ${classType!.name}`}
       </h1>
 
@@ -56,7 +56,7 @@ export default async function EditClassPage({
             name="name"
             defaultValue={classType?.name ?? ""}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             placeholder="למשל: חוג שבועי"
           />
         </div>
@@ -68,7 +68,7 @@ export default async function EditClassPage({
             defaultValue={classType?.description ?? ""}
             required
             rows={4}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             placeholder="תיאור מפורט של החוג"
           />
         </div>
@@ -88,7 +88,7 @@ export default async function EditClassPage({
               name="price"
               defaultValue={classType?.price ?? ""}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
               placeholder="₪380 לחודש"
             />
           </div>
@@ -99,7 +99,7 @@ export default async function EditClassPage({
               name="order"
               type="number"
               defaultValue={classType?.order ?? 0}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             />
           </div>
         </div>
@@ -110,7 +110,7 @@ export default async function EditClassPage({
             name="schedule"
             defaultValue={classType?.schedule ?? ""}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             placeholder="כל יום א'-ה', 09:00-11:30"
           />
         </div>
@@ -118,7 +118,7 @@ export default async function EditClassPage({
         <div className="flex gap-3">
           <button
             type="submit"
-            className="bg-[var(--primary)] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90"
+            className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:opacity-90"
           >
             {isNew ? "הוסף" : "שמור שינויים"}
           </button>
