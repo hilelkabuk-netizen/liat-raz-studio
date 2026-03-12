@@ -1,5 +1,3 @@
-import { auth } from "@/lib/auth";
-import { redirect } from "next/navigation";
 import AdminSidebar from "@/components/admin/AdminSidebar";
 
 export const metadata = {
@@ -7,18 +5,11 @@ export const metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function AdminLayout({
+export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const session = await auth();
-
-  // Login page gets rendered without the admin layout
-  if (!session?.user) {
-    return <>{children}</>;
-  }
-
   return (
     <div className="min-h-screen flex bg-gray-50">
       <AdminSidebar />
