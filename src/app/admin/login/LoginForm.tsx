@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { loginAction } from "./actions";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -16,24 +16,17 @@ export default function LoginForm() {
 
     const formData = new FormData(e.currentTarget);
     try {
-      const result = await signIn("credentials", {
-        email: formData.get("email"),
-        password: formData.get("password"),
-        redirect: false,
-      });
+      const result = await loginAction(formData);
 
       if (result?.error) {
-        setError("אימייל או סיסמה שגויים");
+        setError(result.error);
         setLoading(false);
       } else {
         router.push("/admin");
         router.refresh();
       }
-    } catch (err) {
-      setError(
-        "שגיאת התחברות: " +
-          (err instanceof Error ? err.message : "נסה שוב")
-      );
+    } catch {
+      setError("שגיאת התחברות - נסה שוב");
       setLoading(false);
     }
   }
