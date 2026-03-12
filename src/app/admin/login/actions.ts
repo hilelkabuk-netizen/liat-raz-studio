@@ -8,9 +8,8 @@ export async function loginAction(formData: FormData) {
     await signIn("credentials", {
       email: formData.get("email") as string,
       password: formData.get("password") as string,
-      redirect: false,
+      redirectTo: "/admin",
     });
-    return { success: true };
   } catch (error) {
     if (error instanceof AuthError) {
       return { error: "אימייל או סיסמה שגויים" };

@@ -21,13 +21,12 @@ export default function LoginForm() {
       if (result?.error) {
         setError(result.error);
         setLoading(false);
-      } else {
-        router.push("/admin");
-        router.refresh();
       }
+      // If no error, the server action redirects automatically
     } catch {
-      setError("שגיאת התחברות - נסה שוב");
-      setLoading(false);
+      // NEXT_REDIRECT throws - this is expected on successful login
+      router.push("/admin");
+      router.refresh();
     }
   }
 
