@@ -24,13 +24,13 @@ export default function LoginPage() {
       });
 
       if (result?.error) {
-        setError("אימייל או סיסמה שגויים");
+        setError("שגיאה: " + result.error + " (code: " + result.status + ")");
         setLoading(false);
       } else {
         window.location.href = "/admin";
       }
-    } catch {
-      setError("שגיאת התחברות - נסה שוב");
+    } catch (err) {
+      setError("שגיאה: " + (err instanceof Error ? err.message : String(err)));
       setLoading(false);
     }
   }
