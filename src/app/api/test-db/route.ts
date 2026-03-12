@@ -1,16 +1,25 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import bcrypt from "bcryptjs";
 
 export async function GET() {
   try {
-    const adminCount = await prisma.admin.count();
-    const admins = await prisma.admin.findMany({
-      select: { id: true, email: true },
+    const admin = await prisma.admin.findUnique({
+      where: { email: "liat@studio.com" },
     });
+
+    if (!admin) {
+      return NextResponse.json({ ok: false, error: "Admin not found" });
+    }
+
+    const passwordMatch = await bcrypt.compare("liat2024", admin.password);
+
     return NextResponse.json({
       ok: true,
-      adminCount,
-      admins,
+      adminFound: true,
+      adminEmail: admin.email,
+      passwordMatch,
+      passwordHashStart: admin.password.substring(0, 10),
     });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : String(error);
