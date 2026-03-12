@@ -15,18 +15,23 @@ export default function AdminLoginPage() {
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
-    const result = await signIn("credentials", {
-      email: formData.get("email"),
-      password: formData.get("password"),
-      redirect: false,
-    });
+    try {
+      const result = await signIn("credentials", {
+        email: formData.get("email"),
+        password: formData.get("password"),
+        redirect: false,
+      });
 
-    if (result?.error) {
-      setError("אימייל או סיסמה שגויים");
+      if (result?.error) {
+        setError("אימייל או סיסמה שגויים");
+        setLoading(false);
+      } else {
+        router.push("/admin");
+        router.refresh();
+      }
+    } catch (err) {
+      setError("שגיאת התחברות: " + (err instanceof Error ? err.message : "נסה שוב"));
       setLoading(false);
-    } else {
-      router.push("/admin");
-      router.refresh();
     }
   }
 
