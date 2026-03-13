@@ -30,7 +30,7 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
             {/* Right side - Text */}
             <div className="order-2 md:order-1 text-center md:text-right">
-              <h1 className="text-4xl font-bold leading-tight text-text-primary sm:text-5xl lg:text-6xl">
+              <h1 className="font-display text-5xl font-bold leading-tight text-text-primary sm:text-6xl lg:text-7xl">
                 יש רגעים שצריך
                 <br />
                 לעצור, <span className="text-primary">לנשום,</span>
@@ -105,7 +105,7 @@ export default async function HomePage() {
       {/* Classes Preview */}
       <section className="bg-surface py-20">
         <div className="mx-auto max-w-5xl px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold text-text-primary">
+          <h2 className="font-display mb-12 text-center text-4xl font-bold text-text-primary">
             מה מחכה לך?
           </h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -153,7 +153,7 @@ export default async function HomePage() {
       {/* Gallery */}
       <section className="bg-background py-20">
         <div className="mx-auto max-w-5xl px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold text-text-primary">
+          <h2 className="font-display mb-12 text-center text-4xl font-bold text-text-primary">
             מהסטודיו
           </h2>
           <div className="columns-2 gap-4 sm:columns-3">
@@ -203,7 +203,7 @@ export default async function HomePage() {
           </div>
 
           <div>
-            <h2 className="mb-6 text-3xl font-bold text-text-primary">
+            <h2 className="font-display mb-6 text-4xl font-bold text-text-primary">
               קצת עליי
             </h2>
             <p className="text-lg leading-relaxed text-text-secondary">
@@ -224,7 +224,7 @@ export default async function HomePage() {
       {/* Featured Products */}
       <section className="bg-background py-20">
         <div className="mx-auto max-w-5xl px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold text-text-primary">
+          <h2 className="font-display mb-12 text-center text-4xl font-bold text-text-primary">
             כלי קרמיקה
           </h2>
           <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
@@ -280,7 +280,7 @@ export default async function HomePage() {
           />
         </div>
         <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-text-primary">
+          <h2 className="font-display mb-4 text-4xl font-bold text-text-primary">
             רוצה לשמוע עוד?
           </h2>
           <p className="mb-10 text-lg text-text-secondary">
