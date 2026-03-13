@@ -59,34 +59,34 @@ export default async function HomePage() {
 
             {/* Left side - Image collage */}
             <div className="order-1 md:order-2">
-              <div className="grid grid-cols-4 grid-rows-[2fr_1fr_1fr] gap-2.5 h-[420px] sm:h-[500px]">
-                {/* Studio wheels - top right, closest to title */}
-                <div className="col-start-1 row-start-1 overflow-hidden rounded-2xl">
-                  <img src="/uploads/studio-wheels.jpeg" alt="אופנים בסטודיו" className="h-full w-full object-cover" />
-                </div>
-                {/* Child sculpting - below wheels, closest to title */}
-                <div className="col-start-1 row-start-2 overflow-hidden rounded-2xl">
+              <div className="grid grid-cols-4 grid-rows-3 gap-2.5 h-[420px] sm:h-[500px]">
+                {/* Child sculpting - medium, tall, closest to title */}
+                <div className="col-start-1 row-start-1 row-span-2 overflow-hidden rounded-2xl">
                   <img src="/uploads/child-sculpting.png" alt="ילד יוצר" className="h-full w-full object-cover" />
                 </div>
                 {/* Large - studio activity */}
-                <div className="col-start-2 col-span-2 row-start-1 overflow-hidden rounded-2xl">
+                <div className="col-start-2 col-span-2 row-start-1 row-span-2 overflow-hidden rounded-2xl">
                   <img src="/uploads/studio-activity.jpeg" alt="פעילות בסטודיו" className="h-full w-full object-cover" />
                 </div>
                 {/* Studio interior */}
                 <div className="col-start-4 row-start-1 overflow-hidden rounded-2xl">
                   <img src="/uploads/studio-interior.png" alt="פנים הסטודיו" className="h-full w-full object-cover" />
                 </div>
-                {/* Studio palette painting - middle row center */}
-                <div className="col-start-2 col-span-2 row-start-2 overflow-hidden rounded-2xl">
+                {/* Studio workshop - small */}
+                <div className="col-start-4 row-start-2 overflow-hidden rounded-2xl">
+                  <img src="/uploads/studio-workshop.png" alt="סדנה בסטודיו" className="h-full w-full object-cover" />
+                </div>
+                {/* Studio wheels */}
+                <div className="col-start-1 row-start-3 overflow-hidden rounded-2xl">
+                  <img src="/uploads/studio-wheels.jpeg" alt="אופנים בסטודיו" className="h-full w-full object-cover" />
+                </div>
+                {/* Studio palette painting - wide */}
+                <div className="col-start-2 col-span-2 row-start-3 overflow-hidden rounded-2xl">
                   <img src="/uploads/studio-palette.jpeg" alt="ציור בסטודיו" className="h-full w-full object-cover" />
                 </div>
-                {/* Pottery wheel - tall */}
-                <div className="col-start-4 row-start-2 row-span-2 overflow-hidden rounded-2xl">
+                {/* Pottery wheel */}
+                <div className="col-start-4 row-start-3 overflow-hidden rounded-2xl">
                   <img src="/uploads/pottery-wheel.jpg" alt="אופן קרמיקה" className="h-full w-full object-cover" />
-                </div>
-                {/* Studio workshop - wide bottom */}
-                <div className="col-start-1 col-span-3 row-start-3 overflow-hidden rounded-2xl">
-                  <img src="/uploads/studio-workshop.png" alt="סדנה בסטודיו" className="h-full w-full object-cover" />
                 </div>
               </div>
             </div>
