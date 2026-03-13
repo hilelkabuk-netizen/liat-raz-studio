@@ -68,9 +68,9 @@ export default async function HomePage() {
                 <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
                   <img src="/uploads/studio-interior.png" alt="פנים הסטודיו" className="h-full w-full object-cover" />
                 </div>
-                {/* Child sculpting */}
+                {/* Studio wheels */}
                 <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
-                  <img src="/uploads/child-sculpting.png" alt="ילדה יוצרת" className="h-full w-full object-cover" />
+                  <img src="/uploads/studio-wheels.jpeg" alt="אופנים בסטודיו" className="h-full w-full object-cover" />
                 </div>
                 {/* Pottery wheel - tall */}
                 <div className="col-span-1 row-span-2 overflow-hidden rounded-2xl">
@@ -84,9 +84,9 @@ export default async function HomePage() {
                 <div className="col-span-2 row-span-1 overflow-hidden rounded-2xl">
                   <img src="/uploads/studio-workshop.png" alt="סדנה בסטודיו" className="h-full w-full object-cover" />
                 </div>
-                {/* Studio wheels */}
+                {/* Child sculpting */}
                 <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
-                  <img src="/uploads/studio-wheels.jpeg" alt="אופנים בסטודיו" className="h-full w-full object-cover" />
+                  <img src="/uploads/child-sculpting.png" alt="ילד יוצר" className="h-full w-full object-cover" />
                 </div>
               </div>
             </div>
