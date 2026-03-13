@@ -26,37 +26,74 @@ export default async function HomePage() {
     <main dir="rtl" className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-background">
-        {/* Logo as background - cropped to circle + name only */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] overflow-hidden opacity-50 pointer-events-none">
-          <img
-            src="/uploads/logo.jpeg"
-            alt=""
-            className="w-full"
-          />
-        </div>
-        <div className="relative mx-auto max-w-5xl px-6 py-28 text-center sm:py-36">
-          <h1 className="text-4xl font-bold leading-tight text-text-primary sm:text-5xl md:text-6xl drop-shadow-sm">
-            יש רגעים שצריך לעצור,
-            <br />
-            <span className="text-primary">לנשום, וליצור</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-text-secondary sm:text-xl">
-            הסטודיו לקרמיקה של ליאת רז בראשון לציון — מרחב ליצירה בידיים,
-            לשקט פנימי ולרגע שהוא רק שלך
-          </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="rounded-lg bg-primary px-8 py-3 text-lg font-medium text-white transition hover:opacity-90 shadow-md"
-            >
-              הירשמי לחוג
-            </Link>
-            <Link
-              href="/gift-vouchers"
-              className="rounded-lg border-2 border-primary bg-white/80 px-8 py-3 text-lg font-medium text-primary transition hover:bg-primary hover:text-white shadow-md"
-            >
-              שוברי מתנה
-            </Link>
+        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+            {/* Right side - Text */}
+            <div className="order-2 md:order-1 text-center md:text-right">
+              <h1 className="text-4xl font-bold leading-tight text-text-primary sm:text-5xl lg:text-6xl">
+                יש רגעים שצריך
+                <br />
+                לעצור, <span className="text-primary">לנשום,</span>
+                <br />
+                <span className="text-primary">וליצור</span>
+              </h1>
+              <p className="mt-6 max-w-lg text-lg text-text-secondary sm:text-xl md:mr-0">
+                הסטודיו לקרמיקה של ליאת רז בראשון לציון — מרחב ליצירה בידיים,
+                לשקט פנימי ולרגע שהוא רק שלך
+              </p>
+              <div className="mt-10 flex flex-wrap items-center justify-center md:justify-start gap-4">
+                <Link
+                  href="/contact"
+                  className="rounded-lg bg-primary px-8 py-3 text-lg font-medium text-white transition hover:opacity-90 shadow-md"
+                >
+                  הירשמי לחוג
+                </Link>
+                <Link
+                  href="/gift-vouchers"
+                  className="rounded-lg border-2 border-primary bg-white/80 px-8 py-3 text-lg font-medium text-primary transition hover:bg-primary hover:text-white shadow-md"
+                >
+                  שוברי מתנה
+                </Link>
+              </div>
+            </div>
+
+            {/* Left side - Image collage */}
+            <div className="order-1 md:order-2">
+              <div className="grid grid-cols-3 grid-rows-3 gap-3 h-[400px] sm:h-[480px]">
+                {/* Large image - spans 2 cols, 2 rows */}
+                <div className="col-span-2 row-span-2 overflow-hidden rounded-2xl">
+                  <img
+                    src="/uploads/studio-activity.jpeg"
+                    alt="פעילות בסטודיו"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                {/* Small square image */}
+                <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
+                  <img
+                    src="/uploads/ceramic-painted-bowl.jpeg"
+                    alt="קערה מצוירת"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                {/* Tall/portrait image */}
+                <div className="col-span-1 row-span-2 overflow-hidden rounded-2xl">
+                  <img
+                    src="/uploads/ceramic-flower-pot.jpeg"
+                    alt="עציץ קרמיקה"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                {/* Wide/landscape image */}
+                <div className="col-span-2 row-span-1 overflow-hidden rounded-2xl">
+                  <img
+                    src="/uploads/pottery-wheel.jpg"
+                    alt="אופן קרמיקה"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -130,7 +167,7 @@ export default async function HomePage() {
                     key={img.id}
                     className="mb-4 break-inside-avoid rounded-xl overflow-hidden"
                   >
-                    {img.imageUrl.startsWith("/") ? (
+                    {img.imageUrl ? (
                       <img
                         src={img.imageUrl}
                         alt={img.alt}
@@ -202,7 +239,7 @@ export default async function HomePage() {
                 className="rounded-xl bg-surface p-5 shadow-sm transition hover:shadow-md"
               >
                 <div className="mb-4 flex aspect-square items-center justify-center rounded-lg bg-primary-light/20 overflow-hidden">
-                  {product.imageUrl.startsWith("/") ? (
+                  {product.imageUrl ? (
                     <img
                       src={product.imageUrl}
                       alt={product.name}
