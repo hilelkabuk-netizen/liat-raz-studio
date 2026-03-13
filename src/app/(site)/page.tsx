@@ -59,7 +59,7 @@ export default async function HomePage() {
 
             {/* Left side - Image collage */}
             <div className="order-1 md:order-2">
-              <div className="grid grid-cols-4 grid-rows-3 gap-2.5 h-[420px] sm:h-[500px]">
+              <div className="grid grid-cols-4 grid-rows-[1.5fr_1fr_1fr] gap-2.5 h-[420px] sm:h-[500px]">
                 {/* Studio wheels - top right, closest to title */}
                 <div className="col-start-1 row-start-1 overflow-hidden rounded-2xl">
                   <img src="/uploads/studio-wheels.jpeg" alt="אופנים בסטודיו" className="h-full w-full object-cover" />
