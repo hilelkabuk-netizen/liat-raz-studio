@@ -59,38 +59,34 @@ export default async function HomePage() {
 
             {/* Left side - Image collage */}
             <div className="order-1 md:order-2">
-              <div className="grid grid-cols-3 grid-rows-3 gap-3 h-[400px] sm:h-[480px]">
-                {/* Large image - spans 2 cols, 2 rows */}
+              <div className="grid grid-cols-4 grid-rows-3 gap-2.5 h-[420px] sm:h-[500px]">
+                {/* Large - studio activity */}
                 <div className="col-span-2 row-span-2 overflow-hidden rounded-2xl">
-                  <img
-                    src="/uploads/studio-activity.jpeg"
-                    alt="פעילות בסטודיו"
-                    className="h-full w-full object-cover"
-                  />
+                  <img src="/uploads/studio-activity.jpeg" alt="פעילות בסטודיו" className="h-full w-full object-cover" />
                 </div>
-                {/* Small square image */}
+                {/* Studio interior */}
                 <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
-                  <img
-                    src="/uploads/ceramic-painted-bowl.jpeg"
-                    alt="קערה מצוירת"
-                    className="h-full w-full object-cover"
-                  />
+                  <img src="/uploads/studio-interior.png" alt="פנים הסטודיו" className="h-full w-full object-cover" />
                 </div>
-                {/* Tall/portrait image */}
+                {/* Child sculpting */}
+                <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
+                  <img src="/uploads/child-sculpting.png" alt="ילדה יוצרת" className="h-full w-full object-cover" />
+                </div>
+                {/* Pottery wheel - tall */}
                 <div className="col-span-1 row-span-2 overflow-hidden rounded-2xl">
-                  <img
-                    src="/uploads/ceramic-flower-pot.jpeg"
-                    alt="עציץ קרמיקה"
-                    className="h-full w-full object-cover"
-                  />
+                  <img src="/uploads/pottery-wheel.jpg" alt="אופן קרמיקה" className="h-full w-full object-cover" />
                 </div>
-                {/* Wide/landscape image */}
+                {/* Student with creation */}
+                <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
+                  <img src="/uploads/student-with-creation.jpg" alt="תלמידה עם יצירה" className="h-full w-full object-cover" />
+                </div>
+                {/* Studio workshop - wide */}
                 <div className="col-span-2 row-span-1 overflow-hidden rounded-2xl">
-                  <img
-                    src="/uploads/pottery-wheel.jpg"
-                    alt="אופן קרמיקה"
-                    className="h-full w-full object-cover"
-                  />
+                  <img src="/uploads/studio-workshop.png" alt="סדנה בסטודיו" className="h-full w-full object-cover" />
+                </div>
+                {/* Studio wheels */}
+                <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
+                  <img src="/uploads/studio-wheels.jpeg" alt="אופנים בסטודיו" className="h-full w-full object-cover" />
                 </div>
               </div>
             </div>
