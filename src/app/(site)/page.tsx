@@ -76,9 +76,9 @@ export default async function HomePage() {
                 <div className="col-span-1 row-span-2 overflow-hidden rounded-2xl">
                   <img src="/uploads/pottery-wheel.jpg" alt="אופן קרמיקה" className="h-full w-full object-cover" />
                 </div>
-                {/* Student with creation */}
+                {/* Studio palette painting */}
                 <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
-                  <img src="/uploads/student-with-creation.jpg" alt="תלמידה עם יצירה" className="h-full w-full object-cover" />
+                  <img src="/uploads/studio-palette.jpeg" alt="ציור בסטודיו" className="h-full w-full object-cover" />
                 </div>
                 {/* Studio workshop - wide */}
                 <div className="col-span-2 row-span-1 overflow-hidden rounded-2xl">
