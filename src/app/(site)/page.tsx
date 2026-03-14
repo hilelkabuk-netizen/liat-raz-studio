@@ -59,22 +59,22 @@ export default async function HomePage() {
 
             {/* Left side - Image collage */}
             <div className="order-1 md:order-2">
-              <div className="grid grid-cols-4 grid-rows-3 gap-2.5 h-[420px] sm:h-[500px]">
+              <div className="grid grid-cols-4 grid-rows-3 gap-2.5 h-[500px] sm:h-[600px]">
                 {/* Child sculpting - medium, tall, closest to title */}
-                <div className="col-start-1 row-start-1 row-span-2 overflow-hidden rounded-2xl">
-                  <img src="/uploads/child-sculpting.png" alt="ילד יוצר" className="h-full w-full object-cover" />
+                <div className="col-start-1 row-start-1 row-span-2 overflow-hidden rounded-2xl bg-primary-light/10">
+                  <img src="/uploads/child-sculpting.png" alt="ילד יוצר" className="h-full w-full object-contain" />
                 </div>
                 {/* Large - studio activity */}
                 <div className="col-start-2 col-span-2 row-start-1 row-span-2 overflow-hidden rounded-2xl">
                   <img src="/uploads/studio-activity.jpeg" alt="פעילות בסטודיו" className="h-full w-full object-cover" />
                 </div>
                 {/* Studio interior */}
-                <div className="col-start-4 row-start-1 overflow-hidden rounded-2xl">
-                  <img src="/uploads/studio-interior.png" alt="פנים הסטודיו" className="h-full w-full object-cover" />
+                <div className="col-start-4 row-start-1 overflow-hidden rounded-2xl bg-primary-light/10">
+                  <img src="/uploads/studio-interior.png" alt="פנים הסטודיו" className="h-full w-full object-contain" />
                 </div>
                 {/* Studio workshop - small */}
-                <div className="col-start-4 row-start-2 overflow-hidden rounded-2xl">
-                  <img src="/uploads/studio-workshop.png" alt="סדנה בסטודיו" className="h-full w-full object-cover" />
+                <div className="col-start-4 row-start-2 overflow-hidden rounded-2xl bg-primary-light/10">
+                  <img src="/uploads/studio-workshop.png" alt="סדנה בסטודיו" className="h-full w-full object-contain" />
                 </div>
                 {/* Studio wheels */}
                 <div className="col-start-1 row-start-3 overflow-hidden rounded-2xl">
