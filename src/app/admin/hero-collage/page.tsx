@@ -56,6 +56,23 @@ async function addItem() {
 
 async function seedCollage() {
   "use server";
+  // Create table if it doesn't exist
+  await prisma.$executeRawUnsafe(`
+    CREATE TABLE IF NOT EXISTS "HeroCollageItem" (
+      "id" TEXT NOT NULL PRIMARY KEY,
+      "imageUrl" TEXT NOT NULL,
+      "alt" TEXT NOT NULL,
+      "colStart" INTEGER NOT NULL,
+      "colSpan" INTEGER NOT NULL DEFAULT 1,
+      "rowStart" INTEGER NOT NULL,
+      "rowSpan" INTEGER NOT NULL DEFAULT 1,
+      "order" INTEGER NOT NULL DEFAULT 0,
+      "active" BOOLEAN NOT NULL DEFAULT true,
+      "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      "updatedAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
   const count = await prisma.heroCollageItem.count();
   if (count > 0) return;
 
