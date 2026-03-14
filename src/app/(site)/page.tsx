@@ -35,10 +35,10 @@ export default async function HomePage() {
   // Fallback if no collage items in database
   if (collageItems.length === 0) {
     collageItems = [
-      { id: "1", imageUrl: "/uploads/child-sculpting.png", alt: "ילד יוצר", colStart: 1, colSpan: 1, rowStart: 1, rowSpan: 2 },
+      { id: "1", imageUrl: "/uploads/child-clay-sculpting.png", alt: "ילד מפסל מחומר", colStart: 1, colSpan: 1, rowStart: 1, rowSpan: 2 },
       { id: "2", imageUrl: "/uploads/studio-activity.jpeg", alt: "פעילות בסטודיו", colStart: 2, colSpan: 2, rowStart: 1, rowSpan: 1 },
       { id: "3", imageUrl: "/uploads/studio-interior.png", alt: "פנים הסטודיו", colStart: 4, colSpan: 1, rowStart: 1, rowSpan: 1 },
-      { id: "4", imageUrl: "/uploads/studio-workshop.png", alt: "סדנה בסטודיו", colStart: 4, colSpan: 1, rowStart: 2, rowSpan: 1 },
+      { id: "4", imageUrl: "/uploads/studio-workshop-group.jpeg", alt: "סדנה קבוצתית בסטודיו", colStart: 4, colSpan: 1, rowStart: 2, rowSpan: 1 },
       { id: "5", imageUrl: "/uploads/studio-wheels.jpeg", alt: "אופנים בסטודיו", colStart: 1, colSpan: 1, rowStart: 3, rowSpan: 1 },
       { id: "6", imageUrl: "/uploads/studio-palette.jpeg", alt: "ציור בסטודיו", colStart: 2, colSpan: 2, rowStart: 3, rowSpan: 1 },
       { id: "7", imageUrl: "/uploads/pottery-wheel.jpg", alt: "אופן קרמיקה", colStart: 4, colSpan: 1, rowStart: 3, rowSpan: 1 },

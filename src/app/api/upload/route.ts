@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import sharp from "sharp";
-import { put } from "@vercel/blob";
+import { prisma } from "@/lib/db";
 
 const MAX_SIZE = 10 * 1024 * 1024; // 10MB
 const MAX_WIDTH = 1920;
@@ -42,19 +42,30 @@ export async function POST(request: NextRequest) {
     .webp({ quality: 82 })
     .toBuffer();
 
-  // Generate unique filename
-  const timestamp = Date.now();
-  const safeName = file.name
-    .replace(/\.[^/.]+$/, "")
-    .replace(/[^a-zA-Z0-9-_]/g, "_")
-    .slice(0, 50);
-  const filename = `${safeName}-${timestamp}.webp`;
+  // Generate unique ID and convert to base64
+  const id = `img_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+  const base64Data = processed.toString("base64");
 
-  // Upload to Vercel Blob
-  const blob = await put(`uploads/${filename}`, processed, {
-    access: "public",
-    contentType: "image/webp",
-  });
+  // Ensure table exists
+  await prisma.$executeRawUnsafe(`
+    CREATE TABLE IF NOT EXISTS "UploadedImage" (
+      "id" TEXT NOT NULL PRIMARY KEY,
+      "data" TEXT NOT NULL,
+      "contentType" TEXT NOT NULL DEFAULT 'image/webp',
+      "filename" TEXT,
+      "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
 
-  return NextResponse.json({ url: blob.url, filename });
+  // Save to database
+  await prisma.$executeRawUnsafe(
+    `INSERT INTO "UploadedImage" ("id", "data", "contentType", "filename") VALUES (?, ?, ?, ?)`,
+    id,
+    base64Data,
+    "image/webp",
+    file.name
+  );
+
+  const url = `/api/image/${id}`;
+  return NextResponse.json({ url, filename: file.name });
 }

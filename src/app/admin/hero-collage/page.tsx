@@ -77,10 +77,10 @@ async function seedCollage() {
   if (count > 0) return;
 
   const items = [
-    { imageUrl: "/uploads/child-sculpting.png", alt: "ילד יוצר", colStart: 1, colSpan: 1, rowStart: 1, rowSpan: 2, order: 1 },
+    { imageUrl: "/uploads/child-clay-sculpting.png", alt: "ילד מפסל מחומר", colStart: 1, colSpan: 1, rowStart: 1, rowSpan: 2, order: 1 },
     { imageUrl: "/uploads/studio-activity.jpeg", alt: "פעילות בסטודיו", colStart: 2, colSpan: 2, rowStart: 1, rowSpan: 1, order: 2 },
     { imageUrl: "/uploads/studio-interior.png", alt: "פנים הסטודיו", colStart: 4, colSpan: 1, rowStart: 1, rowSpan: 1, order: 3 },
-    { imageUrl: "/uploads/studio-workshop.png", alt: "סדנה בסטודיו", colStart: 4, colSpan: 1, rowStart: 2, rowSpan: 1, order: 4 },
+    { imageUrl: "/uploads/studio-workshop-group.jpeg", alt: "סדנה קבוצתית בסטודיו", colStart: 4, colSpan: 1, rowStart: 2, rowSpan: 1, order: 4 },
     { imageUrl: "/uploads/studio-wheels.jpeg", alt: "אופנים בסטודיו", colStart: 1, colSpan: 1, rowStart: 3, rowSpan: 1, order: 5 },
     { imageUrl: "/uploads/studio-palette.jpeg", alt: "ציור בסטודיו", colStart: 2, colSpan: 2, rowStart: 3, rowSpan: 1, order: 6 },
     { imageUrl: "/uploads/pottery-wheel.jpg", alt: "אופן קרמיקה", colStart: 4, colSpan: 1, rowStart: 3, rowSpan: 1, order: 7 },
