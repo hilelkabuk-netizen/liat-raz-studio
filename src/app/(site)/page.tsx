@@ -22,6 +22,29 @@ export default async function HomePage() {
     }),
   ]);
 
+  let collageItems: { id: string; imageUrl: string; alt: string; colStart: number; colSpan: number; rowStart: number; rowSpan: number }[] = [];
+  try {
+    collageItems = await prisma.heroCollageItem.findMany({
+      where: { active: true },
+      orderBy: { order: "asc" },
+    });
+  } catch {
+    // Table might not exist yet
+  }
+
+  // Fallback if no collage items in database
+  if (collageItems.length === 0) {
+    collageItems = [
+      { id: "1", imageUrl: "/uploads/child-sculpting.png", alt: "ילד יוצר", colStart: 1, colSpan: 1, rowStart: 1, rowSpan: 2 },
+      { id: "2", imageUrl: "/uploads/studio-activity.jpeg", alt: "פעילות בסטודיו", colStart: 2, colSpan: 2, rowStart: 1, rowSpan: 1 },
+      { id: "3", imageUrl: "/uploads/studio-interior.png", alt: "פנים הסטודיו", colStart: 4, colSpan: 1, rowStart: 1, rowSpan: 1 },
+      { id: "4", imageUrl: "/uploads/studio-workshop.png", alt: "סדנה בסטודיו", colStart: 4, colSpan: 1, rowStart: 2, rowSpan: 1 },
+      { id: "5", imageUrl: "/uploads/studio-wheels.jpeg", alt: "אופנים בסטודיו", colStart: 1, colSpan: 1, rowStart: 3, rowSpan: 1 },
+      { id: "6", imageUrl: "/uploads/studio-palette.jpeg", alt: "ציור בסטודיו", colStart: 2, colSpan: 2, rowStart: 3, rowSpan: 1 },
+      { id: "7", imageUrl: "/uploads/pottery-wheel.jpg", alt: "אופן קרמיקה", colStart: 4, colSpan: 1, rowStart: 3, rowSpan: 1 },
+    ];
+  }
+
   return (
     <main dir="rtl" className="min-h-screen">
       {/* Hero Section */}
@@ -60,34 +83,24 @@ export default async function HomePage() {
             {/* Left side - Image collage */}
             <div className="order-1 md:order-2">
               <div className="grid grid-cols-4 grid-rows-3 gap-2.5 h-[500px] sm:h-[600px]">
-                {/* Child sculpting - medium, tall, closest to title */}
-                <div className="col-start-1 row-start-1 row-span-2 overflow-hidden rounded-2xl bg-background">
-                  <img src="/uploads/child-sculpting.png" alt="ילד יוצר" className="h-full w-full object-contain" />
-                </div>
-                {/* Large - studio activity */}
-                <div className="col-start-2 col-span-2 row-start-1 row-span-2 overflow-hidden rounded-2xl">
-                  <img src="/uploads/studio-activity.jpeg" alt="פעילות בסטודיו" className="h-full w-full object-cover" />
-                </div>
-                {/* Studio interior */}
-                <div className="col-start-4 row-start-1 overflow-hidden rounded-2xl">
-                  <img src="/uploads/studio-interior.png" alt="פנים הסטודיו" className="h-full w-full object-cover" />
-                </div>
-                {/* Studio workshop - small */}
-                <div className="col-start-4 row-start-2 overflow-hidden rounded-2xl">
-                  <img src="/uploads/studio-workshop.png" alt="סדנה בסטודיו" className="h-full w-full object-cover" />
-                </div>
-                {/* Studio wheels */}
-                <div className="col-start-1 row-start-3 overflow-hidden rounded-2xl">
-                  <img src="/uploads/studio-wheels.jpeg" alt="אופנים בסטודיו" className="h-full w-full object-cover" />
-                </div>
-                {/* Studio palette painting - wide */}
-                <div className="col-start-2 col-span-2 row-start-3 overflow-hidden rounded-2xl">
-                  <img src="/uploads/studio-palette.jpeg" alt="ציור בסטודיו" className="h-full w-full object-cover" />
-                </div>
-                {/* Pottery wheel */}
-                <div className="col-start-4 row-start-3 overflow-hidden rounded-2xl">
-                  <img src="/uploads/pottery-wheel.jpg" alt="אופן קרמיקה" className="h-full w-full object-cover" />
-                </div>
+                {collageItems.map((item) => (
+                  <div
+                    key={item.id}
+                    className="overflow-hidden rounded-2xl"
+                    style={{
+                      gridColumnStart: item.colStart,
+                      gridColumnEnd: `span ${item.colSpan}`,
+                      gridRowStart: item.rowStart,
+                      gridRowEnd: `span ${item.rowSpan}`,
+                    }}
+                  >
+                    <img
+                      src={item.imageUrl}
+                      alt={item.alt}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>

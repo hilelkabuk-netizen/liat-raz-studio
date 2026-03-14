@@ -106,3 +106,17 @@ model Admin {
   email    String @unique
   password String
 }
+
+model HeroCollageItem {
+  id       String   @id @default(cuid())
+  imageUrl String
+  alt      String
+  colStart Int
+  colSpan  Int      @default(1)
+  rowStart Int
+  rowSpan  Int      @default(1)
+  order    Int      @default(0)
+  active   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

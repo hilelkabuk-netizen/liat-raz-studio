@@ -11,6 +11,7 @@ const navItems = [
   { href: "/admin/products", label: "מוצרים" },
   { href: "/admin/vouchers", label: "שוברי מתנה" },
   { href: "/admin/gallery", label: "גלריה" },
+  { href: "/admin/hero-collage", label: "קולאז' ראשי" },
   { href: "/admin/orders", label: "הזמנות" },
   { href: "/admin/messages", label: "הודעות" },
 ];
