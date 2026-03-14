@@ -9,6 +9,33 @@ interface ImageUploadProps {
   required?: boolean;
 }
 
+function compressImage(file: File, maxWidth = 1200, quality = 0.7): Promise<Blob> {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      let w = img.width;
+      let h = img.height;
+      if (w > maxWidth) {
+        h = (h * maxWidth) / w;
+        w = maxWidth;
+      }
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return reject(new Error("Canvas error"));
+      ctx.drawImage(img, 0, 0, w, h);
+      canvas.toBlob(
+        (blob) => (blob ? resolve(blob) : reject(new Error("Compression error"))),
+        "image/jpeg",
+        quality
+      );
+    };
+    img.onerror = reject;
+    img.src = URL.createObjectURL(file);
+  });
+}
+
 export default function ImageUpload({
   currentUrl,
   onUpload,
@@ -27,10 +54,14 @@ export default function ImageUpload({
     setError("");
     setUploading(true);
 
-    const formData = new FormData();
-    formData.append("file", file);
-
     try {
+      // Compress image client-side before uploading
+      const compressed = await compressImage(file);
+      const compressedFile = new File([compressed], file.name, { type: "image/jpeg" });
+
+      const formData = new FormData();
+      formData.append("file", compressedFile);
+
       const res = await fetch("/api/upload", {
         method: "POST",
         body: formData,
